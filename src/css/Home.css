@@ -1,0 +1,150 @@
+/* General Home Styling */
+.home {
+  padding: 3rem 1.5rem;
+  width: 100%;
+  box-sizing: border-box;
+  background-color: #121212; /* Darker background for immersive experience */
+  min-height: 100vh; /* Ensure the home section takes at least the full viewport height */
+}
+
+/* Search Form Styling */
+.search-form {
+  max-width: 600px;
+  margin: 0 auto 2.5rem;
+  display: flex;
+  gap: 1.25rem;
+  padding: 1.25rem; /* Increased padding for better spacing */
+  box-sizing: border-box;
+  background-color: rgba(255, 255, 255, 0.1); /* Slight background for search form */
+  border-radius: 12px; /* Slightly larger radius for smoother look */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Deeper shadow for better contrast */
+}
+
+/* Search Input Styling */
+.search-input {
+  flex: 1;
+  padding: 0.85rem 1.25rem;
+  border: 1px solid #444;
+  border-radius: 8px;
+  background-color: #333;
+  color: white;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.search-input::placeholder {
+  color: #aaa; /* Lighter placeholder text for better visibility */
+}
+
+.search-input:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #e50914; /* Red border when focused */
+  border-color: #e50914;
+  transform: scale(1.02);
+}
+
+/* Search Button Styling */
+.search-button {
+  padding: 0.75rem 1.5rem;
+  background-color: #e50914;
+  color: white;
+  border: none; /* Remove default border */
+  border-radius: 8px; /* Match search input radius */
+  font-weight: 500;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.search-button:hover {
+  background-color: #f40612;
+  transform: scale(1.05);
+}
+
+.search-button:active {
+  background-color: #b20710;
+  transform: scale(1);
+}
+
+/* Genre Dropdown Styling */
+.genre-dropdown {
+  max-width: 600px;
+  margin: 1.5rem auto;
+  text-align: center;
+}
+
+.genre-dropdown label {
+  margin-right: 10px;
+  font-size: 1.1rem;
+  color: white;
+  display: inline-block;
+}
+
+.genre-dropdown select {
+  padding: 0.75rem;
+  font-size: 1rem; /* Slightly larger font size for better readability */
+  border-radius: 8px;
+  background-color: #333;
+  color: white;
+  border: 1px solid #444;
+  width: 100%;
+  max-width: 300px; /* Limit width for better proportions */
+  transition: all 0.3s ease;
+  cursor: pointer; /* Indicate it's clickable */
+}
+
+.genre-dropdown select:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #e50914;
+  border-color: #e50914;
+  transform: scale(1.02);
+}
+
+/* Movies Grid Styling */
+.movies-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.75rem;
+  padding: 1rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Movie Card Styling */
+.movie-card {
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  border-radius: 12px; /* Match search form radius */
+  overflow: hidden; /* Ensure content stays within the card */
+}
+
+.movie-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3); /* Deeper shadow on hover */
+}
+
+/* Media Queries */
+@media (max-width: 639px) {
+  .home {
+    padding: 2rem 1rem;
+  }
+
+  .search-form {
+    flex-direction: column; /* Stack search input and button vertically on small screens */
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+  .search-button {
+    width: 100%; /* Full-width button on small screens */
+  }
+
+  .genre-dropdown {
+    max-width: 100%;
+    margin: 1.5rem 0;
+  }
+
+  .movies-grid {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Smaller cards on small screens */
+    gap: 1rem;
+  }
+}

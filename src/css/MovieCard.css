@@ -1,0 +1,180 @@
+/* MovieCard.css */
+
+/* Movie Card Styling */
+.movie-card {
+  position: relative;
+  border-radius: 16px; /* Slightly more rounded corners for a smoother look */
+  overflow: hidden;
+  background-color: #0a030395; /* Dark transparent background */
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, background-color 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  margin: 0 8px 16px 8px;
+  cursor: pointer;
+}
+
+.movie-card:hover {
+  transform: translateY(-10px); /* Slightly stronger lift effect */
+  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.6); /* Darker, more prominent shadow */
+  background-color: #111; /* Slight darkening of card on hover */
+}
+
+/* Movie Poster Styling */
+.movie-poster {
+  width: 100%;
+  height: 375px;
+  aspect-ratio: 2/3; /* Maintain aspect ratio for the movie poster */
+  overflow: hidden;
+}
+
+.movie-poster img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease; /* Smooth zoom effect */
+}
+
+.movie-card:hover .movie-poster img {
+  transform: scale(1.05); /* Slight zoom effect on hover */
+}
+
+/* Movie Overlay */
+.movie-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(191, 36, 36, 0.4));
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  padding: 0.5rem;
+}
+
+.movie-card:hover .movie-overlay {
+  opacity: 1; /* Show overlay on hover */
+}
+
+/* Favorite Button Styling */
+.favorite-btn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  color: white;
+  font-size: 1.5rem;
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease, transform 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.favorite-btn:hover {
+  background-color: rgba(0, 0, 0, 0.9); /* Darker hover effect */
+  transform: scale(1.1); /* Slightly enlarge button on hover */
+}
+
+.favorite-btn.active {
+  color: #ff4757; /* Red color for active favorites */
+}
+
+/* Rating Select Button */
+.rating-select {
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  border: none;
+  padding: 0.75rem;
+  border-radius: 8px; /* More rounded edges */
+  cursor: pointer;
+  margin-top: 1rem;
+  transition: background-color 0.3s ease, transform 0.2s ease-in-out;
+}
+
+.rating-select:hover {
+  background-color: rgba(0, 0, 0, 0.9); /* Darker on hover */
+  transform: scale(1.05); /* Subtle enlarge effect on hover */
+}
+
+/* Movie Info Styling */
+.movie-info {
+  padding: 1rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 120px;
+}
+
+.movie-info h3 {
+  white-space: nowrap;
+  font-size: 1.25rem; /* Slightly larger title */
+  font-weight: bold;
+  color: #fff;
+  overflow: hidden;
+  text-overflow: ellipsis; /* Ensures that the title doesn't overflow */
+}
+
+.movie-info p {
+  color: #ccc; /* Lighter text for description and release year */
+  font-size: 1rem;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.user-rating {
+  color: #ffd700; /* Gold color for rating */
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.user-rating svg {
+  width: 16px;
+  height: 16px;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .movie-card {
+    width: 100%; /* Full width on smaller screens */
+    font-size: 0.9rem; /* Slightly reduce font size on smaller screens */
+  }
+
+  .movie-info {
+    padding: 1rem;
+  }
+
+  .favorite-btn {
+    width: 36px;
+    height: 36px;
+    font-size: 1.2rem;
+  }
+
+  .movie-info h3 {
+    font-size: 1.125rem; /* Adjust title size for small screens */
+  }
+
+  .rating-select {
+    padding: 0.65rem; /* Adjust padding for smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .movie-card {
+    width: 100%; /* Full width on very small screens */
+  }
+
+  .movie-poster {
+    height: 250px; /* Smaller poster height on smaller screens */
+  }
+}
